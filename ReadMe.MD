@@ -12,3 +12,6 @@ GetMessageList returns a list of all of the messages and message IDs in a file. 
 
 GetMessage takes a message ID and file name and returns the text of the specific message in the file. If no file name is provided, then ``C:\WINDOWS\system32\msobjs.dll`` is used.
 
+## What Use is MessageTableReader?
+
+MessageTableReader was originally conceived to help with monitoring and audit of Windows Event Logs. Many event log messages have placeholder codes that need to be looked up from .dll files. MessageTableReader can do this. There's more detail on this in my ebook *PowerShell and Windows Event Logs*.
