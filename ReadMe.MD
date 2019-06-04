@@ -18,7 +18,6 @@ MessageTableReader was originally conceived to help with monitoring and audit of
 
 ### Example
 ```PowerShell
-PS C:\>.\MessageTableReader.ps1
 PS C:\>$messageTable = New-Object MessageTableReader.Reader
 PS C:\>$messageTable.GetMessageList('C:\WINDOWS\system32\msobjs.dll')
 279:Undefined Access (no effect) Bit 7
@@ -35,8 +34,9 @@ PS C:\>$messageTable.GetMessageList('C:\WINDOWS\system32\msobjs.dll')
 
 ### Example
 ```PowerShell
-PS C:\>.\MessageTableReader.ps1
 PS C:\>$messageTable = New-Object MessageTableReader.Reader
 PS C:\>$messageTable.GetMessage(14676,'C:\WINDOWS\system32\msobjs.dll')
 Active Directory Domain Services
 ```
+## Why not just provide a .dll ?
+Some organisations are not able to introduce unapproved binary files into their environment (with good reason). The textual C# is an alternative, and the code can be easily scrutinised.
