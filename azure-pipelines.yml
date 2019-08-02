@@ -1,5 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
@@ -18,9 +16,10 @@ steps:
 - powershell: |
     Add-Type -Path $(System.DefaultWorkingDirectory)\mtr.dll
     $mtr = New-Object MessageTableReader.Reader
-    if ($mtr.GetMessage(16392) -eq 'MD54') {
+    if ($mtr.GetMessage(16392) -eq 'MD5') {
       return $true
     }
     else {
-      throw $false
+      throw "GetMessage failed."
     }
+  displayName: "Test assembly load and GetMessage method"
