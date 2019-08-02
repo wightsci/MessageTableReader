@@ -10,4 +10,4 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- script: C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:mtr.dll $(System.DefaultWorkingDirectory)messgaetablereader.cs
+- script: C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:$(System.DefaultWorkingDirectory)\mtr.dll $(System.DefaultWorkingDirectory)\messagetablereader.cs
