@@ -4,10 +4,13 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
-
+  branches:
+    include: 
+    - master 
+  paths:
+    exclude: 
+    - readme.md 
 pool:
   vmImage: 'windows-latest'
-
 steps:
 - script: C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:$(System.DefaultWorkingDirectory)\mtr.dll $(System.DefaultWorkingDirectory)\messagetablereader.cs
