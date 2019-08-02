@@ -32,12 +32,6 @@ The C# file can be compiled using the C# complier ```csc.exe``` provided as part
 #### GetMessageList(string filename)
 GetMessageList returns a list of all of the messages and message IDs in a file. If no file name is provided, then ``C:\WINDOWS\system32\msobjs.dll`` is used.
 
-#### GetMessage(string id, string filename)
-GetMessage takes a message ID and file name and returns the text of the specific message in the file. If no file name is provided, then ``C:\WINDOWS\system32\msobjs.dll`` is used.
-
-## What Use is MessageTableReader?
-
-MessageTableReader was originally conceived to help with monitoring and audit of Windows Event Logs. Many event log messages have placeholder codes that need to be looked up from .dll files. MessageTableReader can do this. There's more detail on this in my ebook *PowerShell and Windows Event Logs*.
 
 ### Example
 ```PowerShell
@@ -55,11 +49,19 @@ PS C:\>$messageTable.GetMessageList('C:\WINDOWS\system32\msobjs.dll')
 ...
 ```
 
+#### GetMessage(string id, string filename)
+GetMessage takes a message ID and file name and returns the text of the specific message in the file. If no file name is provided, then ``C:\WINDOWS\system32\msobjs.dll`` is used.
+
 ### Example
 ```PowerShell
 PS C:\>$messageTable = New-Object MessageTableReader.Reader
 PS C:\>$messageTable.GetMessage(14676,'C:\WINDOWS\system32\msobjs.dll')
 Active Directory Domain Services
 ```
+
+## What Use is MessageTableReader?
+
+MessageTableReader was originally conceived to help with monitoring and audit of Windows Event Logs. Many event log messages have placeholder codes that need to be looked up from .dll files. MessageTableReader can do this. There's more detail on this in my ebook *PowerShell and Windows Event Logs*.
+
 ## Why not just provide a .dll ?
 Some organisations are not able to introduce unapproved binary files into their environment (with good reason). The textual C# is an alternative, and the code can be easily scrutinised.
