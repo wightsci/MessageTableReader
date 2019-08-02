@@ -20,6 +20,10 @@ Import the class directly by running by running the following, where ``<path>`` 
 ```PowerShell
 Add-Type -Path <path>
 ```
+## Compiling the .DLL
+The C# file can be compiled using the C# complier ```csc.exe``` provided as part of the .Net framework. No Visual Studio required. The version of .Net must be 4.0 or greater.
+
+``csc.exe /target:library /out:MessageTableReader.dll MessageTableReader.cs``
 
 ## Using the Class
 
