@@ -16,7 +16,7 @@ Add-Type -TypeDefinition <variablename>
 ```
 
 ### Method 2
-Import the class directly by running by running the following, where ``<path>`` is the path ot the C# file. 
+Import the class directly by running by running the following, where ``<path>`` is the path ot the C# file (or dll). 
 ```PowerShell
 Add-Type -Path <path>
 ```
