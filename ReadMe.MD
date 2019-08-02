@@ -7,12 +7,20 @@ This class can be used within PowerShell using ``Add-Type`` or compiled into a W
 ## Installation
 Download the MessageTableReader.cs C# file.
 
+### Method 1
 Load the file into a variable in your script by using ```Get-Content`` or by pasting it into a here-string.
 
 Import the class by running by running the following, where ``<variablename>`` is the name of the variable that you have loaded the C# into. 
 ```PowerShell
 Add-Type -TypeDefinition <variablename>
 ```
+
+### Method 2
+Import the class directly by running by running the following, where ``<path>`` is the path ot the C# file. 
+```PowerShell
+Add-Type -Path <path>
+```
+
 ## Using the Class
 
 ## Methods
