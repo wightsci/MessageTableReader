@@ -10,8 +10,4 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- powershell: $net = Get-ChildItem  C:\Windows\Microsoft.NET\Framework\V4.0*
-- powershell: Invoke-Expression "$($net.FullName)\csc.exe /target:library /out:mtr.dll messagetablereader.cs"
-- powershell: Add-Type -Path mtr.dll
-- powershell: $mtr = New-Object MessageTableReader.Reader 
-- powershell: $mtr.GetMessageList()
+- script  C:\windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:mtr.dll messgaetablereader.cs
