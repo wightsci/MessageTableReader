@@ -9,7 +9,7 @@ trigger:
     - master 
   paths:
     exclude: 
-    - readme.md 
+    - ReadMe.MD 
 pool:
   vmImage: 'windows-latest'
 steps:
