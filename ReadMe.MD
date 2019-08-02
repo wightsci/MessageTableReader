@@ -4,6 +4,8 @@ A .Net class to allow access to the message table entries in a .dll or .exe file
 
 This class can be used within PowerShell using ``Add-Type`` or compiled into a Windows library (.dll).
 
+[![Build Status](https://dev.azure.com/wightsci/GitHubRepos/_apis/build/status/wightsci.MessageTableReader?branchName=master)](https://dev.azure.com/wightsci/GitHubRepos/_build/latest?definitionId=3&branchName=master)
+
 ## Installation
 Download the MessageTableReader.cs C# file.
 
