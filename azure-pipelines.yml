@@ -14,3 +14,13 @@ pool:
   vmImage: 'windows-latest'
 steps:
 - script: C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:$(System.DefaultWorkingDirectory)\mtr.dll $(System.DefaultWorkingDirectory)\messagetablereader.cs
+  displayName: "Build Library using csc.exe"
+- powershell: |
+    Add-Type -Path $(System.DefaultWorkingDirectory)\mtr.dll
+    $mtr = New-Object MessageTableReader.Reader
+    if ($mtr.GetMessage(16392) -eq 'MD5') {
+      return $true
+    }
+    else {
+      return $false
+    }
