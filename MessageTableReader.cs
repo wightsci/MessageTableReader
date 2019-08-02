@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
  {
     public class Reader
     {
+
     //Based on https://stackoverflow.com/questions/33498244/marshaling-a-message-table-resource
                     
         [DllImport("kernel32.dll", SetLastError = true)]
