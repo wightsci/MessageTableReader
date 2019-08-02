@@ -18,9 +18,9 @@ steps:
 - powershell: |
     Add-Type -Path $(System.DefaultWorkingDirectory)\mtr.dll
     $mtr = New-Object MessageTableReader.Reader
-    if ($mtr.GetMessage(16392) -eq 'MD45') {
+    if ($mtr.GetMessage(16392) -eq 'MD54') {
       return $true
     }
     else {
-      return $false
+      throw $false
     }
