@@ -10,4 +10,4 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- script  C:\windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:mtr.dll messgaetablereader.cs
+- script: C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:library /out:mtr.dll messgaetablereader.cs
