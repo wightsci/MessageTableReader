@@ -7,13 +7,11 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- powershell: $net = Get-ChildItem  C:\Windows\Microsoft.NET\Framework\V4.0*
+- powershell: $($net.FullName)\csc.exe /target:library /out:mtr.dll messagetablereader.cs
+- powershell: Add-Type -Path mtr.dll
+- powershell: $mtr = New-Object MessageTableReader.Reader 
+- powershell: $mtr.GetMessageList()
