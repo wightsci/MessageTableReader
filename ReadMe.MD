@@ -7,7 +7,7 @@ This class can be used within PowerShell using ``Add-Type`` or compiled into a W
 [![Build Status](https://dev.azure.com/wightsci/GitHubRepos/_apis/build/status/wightsci.MessageTableReader?branchName=master)](https://dev.azure.com/wightsci/GitHubRepos/_build/latest?definitionId=3&branchName=master)
 
 ## Installation
-First, download the MessageTableReader.cs C# file.
+First, download the MessageTableReader.cs C# file from this repo.
 
 ### Method 1
 Load the file into a variable in your script by using ``Get-Content`` or by pasting it into a here-string.
